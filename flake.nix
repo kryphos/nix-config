@@ -15,13 +15,14 @@
         };
     };
 
-    outputs = input@{ self, nixpkgs, home-manager, ... }:
+    outputs = inputs@{ self, nixpkgs, home-manager, ... }:
         let
             systems = [ "luca-iso" "luca-notebook" "luca-pc" "luca-wsl" ];
 
             mkConfig = name: nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 pkgs = nixpkgs.legacyPackages."x86_64-linux";
+                specialArgs = { inherit inputs; };
                 modules = [
                     (./. + "/hosts/${name}/configuration.nix")
                     home-manager.nixosModules.default
