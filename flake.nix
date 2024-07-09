@@ -24,25 +24,25 @@
             nixosConfigurations = {
                 luca-iso = nixpkgs.lib.nixosSystem {
                     modules = [
-                        ./hosts/iso/configuration.nix
+                        ./hosts/luca-iso/configuration.nix
                         home-manager.nixosModules.default
                     ];
                 };
                 luca-notebook = nixpkgs.lib.nixosSystem {
                     modules = [
-                        ./hosts/notebook/configuration.nix
+                        ./hosts/luca-notebook/configuration.nix
                         home-manager.nixosModules.default
                     ];
                 };
                 luca-pc = nixpkgs.lib.nixosSystem {
                     modules = [
-                        ./hosts/pc/configuration.nix
+                        ./hosts/luca-pc/configuration.nix
                         home-manager.nixosModules.default
                     ];
                 };
                 luca-wsl = nixpkgs.lib.nixosSystem {
                     modules = [
-                        ./hosts/wsl/configuration.nix
+                        ./hosts/luca-wsl/configuration.nix
                         home-manager.nixosModules.default
                     ];
                 };
