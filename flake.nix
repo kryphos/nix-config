@@ -15,40 +15,23 @@
         };
     };
 
-    outputs = { nixpkgs, home-manager, ... }: {
-            nixosConfigurations = {
-                luca-iso = nixpkgs.lib.nixosSystem {
-                    system = "x86_64-linux";
-                    pkgs = nixpkgs.legacyPackages."x86_64-linux";
-                    modules = [
-                        ./hosts/luca-iso/configuration.nix
-                        home-manager.nixosModules.default
-                    ];
-                };
-                luca-notebook = nixpkgs.lib.nixosSystem {
-                    system = "x86_64-linux";
-                    pkgs = nixpkgs.legacyPackages."x86_64-linux";
-                    modules = [
-                        ./hosts/luca-notebook/configuration.nix
-                        home-manager.nixosModules.default
-                    ];
-                };
-                luca-pc = nixpkgs.lib.nixosSystem {
-                    system = "x86_64-linux";
-                    pkgs = nixpkgs.legacyPackages."x86_64-linux";
-                    modules = [
-                        ./hosts/luca-pc/configuration.nix
-                        home-manager.nixosModules.default
-                    ];
-                };
-                luca-wsl = nixpkgs.lib.nixosSystem {
-                    system = "x86_64-linux";
-                    pkgs = nixpkgs.legacyPackages."x86_64-linux";
-                    modules = [
-                        ./hosts/luca-wsl/configuration.nix
-                        home-manager.nixosModules.default
-                    ];
-                };
+    outputs = { nixpkgs, home-manager, ... }:
+        let
+            systems = [ "luca-iso" "luca-notebook" "luca-pc" "luca-wsl" ];
+
+            mkConfig = name: nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                pkgs = nixpkgs.legacyPackages."x86_64-linux";
+                modules = [
+                    (./. + "/hosts/${name}/configuration.nix")
+                    home-manager.nixosModules.default
+                ];
             };
+
+            configs = builtins.listToAttrs (map (
+                name: { name = name; value = mkConfig name; })
+            systems);
+        in {
+            nixosConfigurations = configs;
         };
 }
