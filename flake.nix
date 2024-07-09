@@ -15,7 +15,7 @@
         };
     };
 
-    outputs = { nixpkgs, home-manager, ... }:
+    outputs = input@{ self, nixpkgs, home-manager, ... }:
         let
             systems = [ "luca-iso" "luca-notebook" "luca-pc" "luca-wsl" ];
 
