@@ -15,7 +15,7 @@
         };
     };
 
-    outputs = { self, nixpkgs, home-manager, ... }@inputs:
+    outputs = { self, nixpkgs, home-manager, ... }:
         let
             system = "x86_64-linux";
             pkgs = nixpkgs.legacyPackages.${system};
@@ -23,44 +23,28 @@
         {
             nixosConfigurations = {
                 luca-iso = nixpkgs.lib.nixosSystem {
-                    extraSpecialArgs = { inherit inputs; };
                     modules = [
                         ./hosts/iso/configuration.nix
                         home-manager.nixosModules.default
                     ];
-                    configuration = {
-                        networking.hostName = "luca-iso";
-                    };
                 };
                 luca-notebook = nixpkgs.lib.nixosSystem {
-                    extraSpecialArgs = { inherit inputs; };
                     modules = [
                         ./hosts/notebook/configuration.nix
                         home-manager.nixosModules.default
                     ];
-                    configuration = {
-                        networking.hostName = "luca-notebook";
-                    };
                 };
                 luca-pc = nixpkgs.lib.nixosSystem {
-                    extraSpecialArgs = { inherit inputs; };
                     modules = [
                         ./hosts/pc/configuration.nix
                         home-manager.nixosModules.default
                     ];
-                    configuration = {
-                        networking.hostName = "luca-pc";
-                    };
                 };
                 luca-wsl = nixpkgs.lib.nixosSystem {
-                    extraSpecialArgs = { inherit inputs; };
                     modules = [
                         ./hosts/wsl/configuration.nix
                         home-manager.nixosModules.default
                     ];
-                    configuration = {
-                        networking.hostName = "luca-wsl";
-                    };
                 };
             };
         };

@@ -1,5 +1,5 @@
 { ... }: {
-    inports = [
+    imports = [
         ./bootloader.nix
         ./linker.nix
         ./locale.nix
