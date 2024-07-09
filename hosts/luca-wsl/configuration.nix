@@ -3,5 +3,5 @@
         ../../modules/system/default.nix
     ];
 
-    networking.hostname = "luca-wsl";
+    networking.hostName = "luca-wsl";
 }

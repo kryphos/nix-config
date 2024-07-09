@@ -3,5 +3,5 @@
         ../../modules/system/default.nix
     ];
 
-    networking.hostname = "luca-iso";
+    networking.hostName = "luca-iso";
 }
