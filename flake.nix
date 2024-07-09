@@ -15,32 +15,35 @@
         };
     };
 
-    outputs = { self, nixpkgs, home-manager, ... }:
-        let
-            system = "x86_64-linux";
-            pkgs = nixpkgs.legacyPackages.${system};
-        in
-        {
+    outputs = { nixpkgs, home-manager, ... }: {
             nixosConfigurations = {
                 luca-iso = nixpkgs.lib.nixosSystem {
+                    system = "x86_64-linux";
+                    pkgs = nixpkgs.legacyPackages."x86_64-linux";
                     modules = [
                         ./hosts/luca-iso/configuration.nix
                         home-manager.nixosModules.default
                     ];
                 };
                 luca-notebook = nixpkgs.lib.nixosSystem {
+                    system = "x86_64-linux";
+                    pkgs = nixpkgs.legacyPackages."x86_64-linux";
                     modules = [
                         ./hosts/luca-notebook/configuration.nix
                         home-manager.nixosModules.default
                     ];
                 };
                 luca-pc = nixpkgs.lib.nixosSystem {
+                    system = "x86_64-linux";
+                    pkgs = nixpkgs.legacyPackages."x86_64-linux";
                     modules = [
                         ./hosts/luca-pc/configuration.nix
                         home-manager.nixosModules.default
                     ];
                 };
                 luca-wsl = nixpkgs.lib.nixosSystem {
+                    system = "x86_64-linux";
+                    pkgs = nixpkgs.legacyPackages."x86_64-linux";
                     modules = [
                         ./hosts/luca-wsl/configuration.nix
                         home-manager.nixosModules.default
