@@ -2,6 +2,8 @@
     description = "NixOS configuration";
 
     inputs = {
+        system = "x86_64-linux";
+
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
         home-manager = {
@@ -15,9 +17,8 @@
         };
     };
 
-    outputs = { self, nixpkgs, home-manager, ... }@inputs:
+    outputs = { self, system, nixpkgs, home-manager, ... }@inputs:
         let
-            system = "x86_64-linux";
             pkgs = nixpkgs.legacyPackages.${system};
         in
         {
