@@ -1,8 +1,8 @@
 { pkgs, ... }: {
-    boot.loader.grub = {
-        enable = true;
-        useOSProber = true;
-    };
+  boot.loader.grub = {
+    enable = true;
+    useOSProber = true;
+  };
 
-    boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 }

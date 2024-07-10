@@ -1,5 +1,1 @@
-{ ... }: {
-    imports = [
-        ../../modules/system/default.nix
-    ];
-}
+{ ... }: { imports = [ ../../modules/system/default.nix ]; }

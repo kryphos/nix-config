@@ -1,13 +1,8 @@
 { pkgs, ... }: {
-    programs.nix-ld = {
-        enable = true;
-        libraries = with pkgs; [
-        ];
-    };
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [ ];
+  };
 
-    environment.systemPackages = with pkgs; [
-        git
-        neovim
-        zsh
-    ];
+  environment.systemPackages = with pkgs; [ git neovim zsh ];
 }

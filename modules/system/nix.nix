@@ -1,6 +1,6 @@
 { ... }: {
-    nix.settings.experimental-features = [ "nix-command flakes" ];
-    nixpkgs.config.allowUnfree = true;
+  nix.settings.experimental-features = [ "nix-command flakes" ];
+  nixpkgs.config.allowUnfree = true;
 
-    system.stateVersion = "24.11";
+  system.stateVersion = "24.11";
 }
