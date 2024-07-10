@@ -17,13 +17,19 @@
 
     outputs = inputs@{ self, nixpkgs, home-manager, ... }:
         let
-            systems = [ "luca-iso" "luca-notebook" "luca-pc" "luca-wsl" ];
+            system = "x86_64-linux";
+
+            hosts = [ "luca-iso" "luca-notebook" "luca-pc" "luca-wsl" ];
 
             mkConfig = name: nixpkgs.lib.nixosSystem {
-                system = "x86_64-linux";
-                specialArgs = { inherit inputs; };
+                inherit system;
+                specialArgs = {
+                    inherit system;
+                    inherit inputs;
+                    isWSL = name == "luca-wsl";
+                };
                 modules = [
-                    (./. + "/hosts/${name}/configuration.nix")
+                    ./hosts/${name}/configuration.nix
                     home-manager.nixosModules.default
                     {
                         networking.hostName = name;
@@ -33,7 +39,7 @@
 
             configs = builtins.listToAttrs (map (
                 name: { name = name; value = mkConfig name; })
-            systems);
+            hosts);
         in {
             nixosConfigurations = configs;
         };
