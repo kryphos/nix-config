@@ -4,7 +4,7 @@
       isNormalUser = true;
       home = "/home/luca";
       shell = "/bin/zsh";
-      password = "temp";
+      password = "test";
       extraGroups = [ "wheel" "networkmanager" ];
     };
   };
