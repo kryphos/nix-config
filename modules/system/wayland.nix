@@ -1,6 +1,15 @@
 { pkgs, lib, isWSL, ... }: {
   config = lib.mkIf isWSL {
-    services.xserver.displayManager.sddm.wayland.enable = true;
+    services.greetd = {
+      enable = true;
+      settings = rec {
+        initial_session = {
+          command = "${pkgs.hyprland}/bin/hyprland";
+          user = "luca";
+        };
+        default_session = initial_session;
+      };
+    };
 
     programs.hyprland = {
       enable = true;
