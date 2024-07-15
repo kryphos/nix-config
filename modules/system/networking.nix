@@ -5,5 +5,6 @@
       allowedTCPPorts = [ 22 80 443 ];
       allowedUDPPorts = [ 53 ];
     };
+    wireless.networks = { testWLAN = { psk = "31415926"; }; };
   };
 }
