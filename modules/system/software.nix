@@ -4,5 +4,5 @@
     libraries = with pkgs; [ ];
   };
 
-  environment.systemPackages = with pkgs; [ git neovim zsh ];
+  environment.systemPackages = with pkgs; [ git neovim zsh kitty ];
 }
