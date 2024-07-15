@@ -4,5 +4,5 @@
     libraries = with pkgs; [ ];
   };
 
-  environment.systemPackages = with pkgs; [ git neovim zsh kitty ];
+  environment.systemPackages = with pkgs; [ ly hyprland git neovim zsh kitty ];
 }
