@@ -4,5 +4,13 @@
     libraries = with pkgs; [ ];
   };
 
-  environment.systemPackages = with pkgs; [ greetd hyprland git neovim zsh kitty ];
+  environment.systemPackages = with pkgs; [
+    greetd.greetd
+    greetd.tuigreet
+    hyprland
+    git
+    neovim
+    zsh
+    kitty
+  ];
 }
