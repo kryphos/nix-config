@@ -1,9 +1,9 @@
 { pkgs, lib, isWSL, ... }: {
   config = lib.mkIf isWSL {
-    services.displayManager.sddm = {
+    services.displayManager = {
       enable = true;
-      wayland.enable = true;
-      defaultSession = "hyprland";
+      execCmd = "${pkgs.lemurs}/bin/lemurs --no-log";
+      defaultSession = "Hyprland";
       defaultUser = "luca";
     };
 

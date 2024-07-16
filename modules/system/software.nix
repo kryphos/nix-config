@@ -7,7 +7,7 @@
   environment.systemPackages = with pkgs; [
     git
     hyprland
-    kdePackages.sddm
+    lemurs
     kitty
     neovim
     zsh
