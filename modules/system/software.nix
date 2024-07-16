@@ -112,7 +112,7 @@
     starship
     steam
     system-config-printer
-    tar
+    gnutar
     terraform
     texliveFull
     thc-hydra
