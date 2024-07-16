@@ -25,6 +25,7 @@
     cargo-make
     cargo-watch
     cargo-wizard
+    cinnamon.nemo
     clang
     cloc
     cmake
@@ -78,7 +79,6 @@
     minecraft
     mold
     mpv
-    nemo
     neovide
     neovim
     ninja
