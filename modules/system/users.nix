@@ -4,7 +4,7 @@
       isNormalUser = true;
       home = "/home/luca";
       password = "test";
-      extraGroups = [ "wheel" "networkmanager" ];
+      extraGroups = [ "wheel" "networkmanager" "docker" ];
     };
   };
 }
