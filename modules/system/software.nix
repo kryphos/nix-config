@@ -102,7 +102,6 @@
     ranger
     ripgrep
     rustup
-    sane
     sane-airscan
     satty
     sddm
