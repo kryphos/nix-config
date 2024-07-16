@@ -84,7 +84,7 @@
     ninja
     nmap
     nodejs_22
-    ntfs-3g
+    ntfs3g
     nwg-look
     obs-studio
     onlyoffice-bin_latest
