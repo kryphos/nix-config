@@ -1,10 +1,10 @@
 { pkgs, lib, isWSL, ... }: {
   config = lib.mkIf isWSL {
     services.displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
-        defaultSession = "hyprland";
-        defaultUser = "luca";
+      enable = true;
+      wayland.enable = true;
+      defaultSession = "hyprland";
+      defaultUser = "luca";
     };
 
     programs.hyprland = {

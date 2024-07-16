@@ -4,5 +4,12 @@
     libraries = with pkgs; [ ];
   };
 
-  environment.systemPackages = with pkgs; [ git neovim zsh kitty ];
+  environment.systemPackages = with pkgs; [
+    git
+    hyprland
+    kdePackages.sddm
+    kitty
+    neovim
+    zsh
+  ];
 }
