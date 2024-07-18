@@ -49,7 +49,6 @@
     gparted
     grim
     hashcat
-    haskellPackages.ghcup
     headsetcontrol
     hyprland
     hyprlock
