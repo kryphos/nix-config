@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   nixpkgs.config = {
+    allowUnfree = true;
     allowBroken = true;
     permittedInsecurePackages = [ "electron-27.3.11" ];
   };
