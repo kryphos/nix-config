@@ -94,6 +94,7 @@
     nwg-look
     obs-studio
     onlyoffice-bin_latest
+    ly
     openssl
     opentabletdriver
     path-of-building
