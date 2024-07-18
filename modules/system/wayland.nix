@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   services.displayManager = {
      enable = true;
-     execCmd = "${pkgs.lemurs}/bin/lemurs --no-log";
+     sddm.enable = true;
      defaultSession = "Hyprland";
   };
 
@@ -15,5 +15,4 @@
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   services.printing.enable = true;
-  services.xserver.enable = true;
 }
