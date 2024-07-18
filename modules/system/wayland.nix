@@ -1,5 +1,6 @@
 { pkgs, ... }: {
-  services.displayManager = {
+  services.xserver.enable = true;
+  services.xserver.displayManager = {
      enable = true;
      sddm.enable = true;
      defaultSession = "Hyprland";
