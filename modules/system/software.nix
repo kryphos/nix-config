@@ -1,12 +1,13 @@
 { pkgs, ... }: {
+  nixpkgs.config = {
+    allowBroken = true;
+    permittedInsecurePackages = [ "electron-27.3.11" ];
+  };
+
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [ ];
   };
-
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-27.3.11"
-  ];
 
   environment.systemPackages = with pkgs; [
     act
