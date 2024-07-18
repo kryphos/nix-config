@@ -52,9 +52,11 @@
     gdb
     git
     gnumake
+    gnutar
     gparted
     grim
     hashcat
+    haskellPackages.ghcup
     headsetcontrol
     hyprland
     hyprlock
@@ -117,7 +119,6 @@
     starship
     steam
     system-config-printer
-    gnutar
     terraform
     texliveFull
     thc-hydra
