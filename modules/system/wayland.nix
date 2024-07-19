@@ -19,7 +19,7 @@
       TTYReset = "yes";
       TTYVHangup = "yes";
     };
-    serviceConfig = { ExecStart = "/run/current-system/sw/bin/lemurs"; };
+    serviceConfig = { ExecStart = "/run/current-system/sw/bin/lemurs --no-log"; };
     aliases = [ "display-manager.service" ];
   };
 
