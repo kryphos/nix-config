@@ -3,7 +3,7 @@
      enable = true;
      sddm.enable = true;
      sddm.wayland.enable = true;
-     defaultSession = "Hyprland";
+     defaultSession = "hyprland";
   };
 
   programs.hyprland = {
