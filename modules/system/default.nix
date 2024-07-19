@@ -7,5 +7,6 @@
     ./software.nix
     ./sound.nix
     ./users.nix
+    ./wayland.nix
   ];
 }

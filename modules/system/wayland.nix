@@ -1,8 +1,7 @@
 { pkgs, ... }: {
-  services.xserver.enable = true;
-  services.xserver.displayManager = {
+  services.displayManager = {
      enable = true;
-     sddm.enable = true;
+     execCmd = "${pkgs.lemurs}/bin/lemurs --no-log";
      defaultSession = "Hyprland";
   };
 
