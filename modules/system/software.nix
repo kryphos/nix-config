@@ -110,7 +110,6 @@
     rustup
     sane-airscan
     satty
-    sddm
     sfxr-qt
     slurp
     spicetify-cli

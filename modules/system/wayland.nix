@@ -1,8 +1,6 @@
 { pkgs, ... }: {
   services.displayManager = {
      enable = true;
-     sddm.enable = true;
-     sddm.wayland.enable = true;
      defaultSession = "hyprland";
   };
 
