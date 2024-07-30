@@ -1,27 +1,5 @@
 { pkgs, ... }: {
-  services.displayManager = {
-    enable = true;
-    defaultSession = "hyprland";
-  };
-
-  systemd.services.lemurs = {
-    enable = true;
-    description = "Ly";
-    after = [
-      "systemd-user-sessions.service"
-      "plymouth-quit-wait.service"
-      "getty@tty2.service"
-    ];
-    unitConfig = {
-      Type = "idle";
-      StandardInput = "tty";
-      TTYPath = "/dev/tty2";
-      TTYReset = "yes";
-      TTYVHangup = "yes";
-    };
-    serviceConfig = { ExecStart = "/run/current-system/sw/bin/ly"; };
-    aliases = [ "display-manager.service" ];
-  };
+  services.xserver.displayManager.gdm.enable = true;
 
   programs.hyprland = {
     enable = true;
