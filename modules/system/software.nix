@@ -72,11 +72,8 @@
     krusader
     lazydocker
     lazygit
-    libclang
-    libpqxx
     logseq
     lutris
-    ly
     man
     man-pages
     man-pages-posix
