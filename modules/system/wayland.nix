@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  services.xserver.displayManager.gdm.enable = true;
+  services.displayManager.sddm.enable = true;
 
   programs.hyprland = {
     enable = true;

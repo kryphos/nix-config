@@ -12,7 +12,7 @@
 
   environment.systemPackages = with pkgs; [
     act
-    gdm
+    sddm
     aircrack-ng
     ani-cli
     armitage
