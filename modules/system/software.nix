@@ -72,11 +72,11 @@
     krusader
     lazydocker
     lazygit
-    lemurs
     libclang
     libpqxx
     logseq
     lutris
+    ly
     man
     man-pages
     man-pages-posix
