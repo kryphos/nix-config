@@ -6,7 +6,7 @@
 
   systemd.services.lemurs = {
     enable = true;
-    description = "Lemurs";
+    description = "Ly";
     after = [
       "systemd-user-sessions.service"
       "plymouth-quit-wait.service"
@@ -19,7 +19,7 @@
       TTYReset = "yes";
       TTYVHangup = "yes";
     };
-    serviceConfig = { ExecStart = "/run/current-system/sw/bin/lemurs --no-log"; };
+    serviceConfig = { ExecStart = "/run/current-system/sw/bin/ly"; };
     aliases = [ "display-manager.service" ];
   };
 

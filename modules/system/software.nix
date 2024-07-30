@@ -109,7 +109,6 @@
     ripgrep
     rustup
     sane-airscan
-    satty
     sfxr-qt
     slurp
     spicetify-cli
