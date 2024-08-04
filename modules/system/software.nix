@@ -16,6 +16,7 @@
     aircrack-ng
     ani-cli
     armitage
+    llvmPackages.bintools
     audacity
     awscli
     bacon
